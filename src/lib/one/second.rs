@@ -1,9 +1,3 @@
-pub fn first() {
-    let input = get_input();
-    let increases = count_increases(&input);
-    println!("{}", increases);
-}
-
 pub fn second() {
     let input = get_input();
     let increases = count_summed_increases(&input);
@@ -15,20 +9,6 @@ fn get_input() -> Vec<usize> {
         .iter()
         .map(|x| x.parse::<usize>().unwrap())
         .collect()
-}
-
-fn count_increases(input: &Vec<usize>) -> usize {
-    let mut increases = 0;
-
-    for (i, num) in input.iter().enumerate() {
-        if i == 0 {
-            continue;
-        }
-        if num > &input[i - 1] {
-            increases += 1;
-        }
-    }
-    increases
 }
 
 fn count_summed_increases(input: &Vec<usize>) -> usize {
