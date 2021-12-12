@@ -1,6 +1,3 @@
-use std::fs::File;
-use std::io::{BufRead, BufReader};
-
 pub fn first() {
     let input = get_input();
     let increases = count_increases(&input);
@@ -14,14 +11,10 @@ pub fn second() {
 }
 
 fn get_input() -> Vec<usize> {
-    let mut numbers = Vec::new();
-    let file = File::open("input.txt").unwrap();
-    for line in BufReader::new(file).lines() {
-        if let Ok(num) = line {
-            numbers.push(num.parse::<usize>().unwrap());
-        }
-    }
-    numbers
+    crate::utils::get_input("one")
+        .iter()
+        .map(|x| x.parse::<usize>().unwrap())
+        .collect()
 }
 
 fn count_increases(input: &Vec<usize>) -> usize {
