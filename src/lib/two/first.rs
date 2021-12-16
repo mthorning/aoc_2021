@@ -6,7 +6,7 @@ enum Direction {
 
 struct Instruction {
     direction: Direction,
-    distance: usize,
+    distance: i32,
 }
 
 impl Instruction {
@@ -17,7 +17,7 @@ impl Instruction {
                 let parts: Vec<&str> = x.split(" ").collect();
                 Instruction {
                     direction: Self::get_direction(parts[0]),
-                    distance: parts[1].parse::<usize>().unwrap(),
+                    distance: parts[1].parse::<i32>().unwrap(),
                 }
             })
             .collect()
@@ -35,8 +35,8 @@ impl Instruction {
 
 #[derive(Debug)]
 struct Coordinates {
-    x: usize,
-    y: usize,
+    x: i32,
+    y: i32,
 }
 
 impl Coordinates {
@@ -58,7 +58,7 @@ impl Coordinates {
         }
     }
 
-    fn multiply(&self) -> usize {
+    fn multiply(&self) -> i32 {
        self.x * self.y 
     }
 }

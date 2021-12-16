@@ -6,7 +6,7 @@ enum Direction {
 
 struct Instruction {
     direction: Direction,
-    units: usize,
+    units: i32,
 }
 
 impl Instruction {
@@ -17,7 +17,7 @@ impl Instruction {
                 let parts: Vec<&str> = horizontal.split(" ").collect();
                 Instruction {
                     direction: Self::get_direction(parts[0]),
-                    units: parts[1].parse::<usize>().unwrap(),
+                    units: parts[1].parse::<i32>().unwrap(),
                 }
             })
             .collect()
@@ -35,9 +35,9 @@ impl Instruction {
 
 #[derive(Debug)]
 struct Submarine {
-    aim: usize,
-    horizontal: usize,
-    depth: usize,
+    aim: i32,
+    horizontal: i32,
+    depth: i32,
 }
 
 impl Submarine {
@@ -62,7 +62,7 @@ impl Submarine {
         }
     }
 
-    fn multiply(&self) -> usize {
+    fn multiply(&self) -> i32 {
         self.horizontal * self.depth
     }
 }

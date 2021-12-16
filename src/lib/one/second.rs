@@ -1,17 +1,10 @@
 pub fn second() {
-    let input = get_input();
+    let input = super::first::get_input();
     let increases = count_summed_increases(&input);
     println!("{}", increases);
 }
 
-fn get_input() -> Vec<usize> {
-    crate::utils::get_input("one")
-        .iter()
-        .map(|x| x.parse::<usize>().unwrap())
-        .collect()
-}
-
-fn count_summed_increases(input: &Vec<usize>) -> usize {
+fn count_summed_increases(input: &Vec<i32>) -> i32 {
     let mut increases = 0;
     let mut previous_sum = 0;
 

@@ -4,14 +4,14 @@ pub fn first() {
     println!("{}", increases);
 }
 
-fn get_input() -> Vec<usize> {
+pub fn get_input() -> Vec<i32> {
     crate::utils::get_input("one")
         .iter()
-        .map(|x| x.parse::<usize>().unwrap())
+        .map(|x| x.parse::<i32>().unwrap())
         .collect()
 }
 
-fn count_increases(input: &Vec<usize>) -> usize {
+fn count_increases(input: &Vec<i32>) -> i32 {
     let mut increases = 0;
 
     for (i, num) in input.iter().enumerate() {
