@@ -4,6 +4,7 @@ fn main() {
     aoc::two::first();
     aoc::two::second();
     aoc::three::first();
-    aoc::three::second(); */
-    aoc::four::first();
+    aoc::three::second();
+    aoc::four::first(); */
+    aoc::four::second();
 }
